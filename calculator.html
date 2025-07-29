@@ -1,0 +1,59 @@
+<!-- 
+$result = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $P = floatval($_POST['principal']);
+  $annual_rate = floatval($_POST['rate']);
+  $years = floatval($_POST['term']);
+  $n = $years * 12;
+  $r = $annual_rate / (12 * 100);
+  if ($r > 0) {
+    $emi = ($P * $r * pow(1 + $r, $n)) / (pow(1 + $r, $n) - 1);
+  } else {
+    $emi = $P / $n;
+  }
+  $total = $emi * $n;
+  $interest = $total - $P;
+  $result = [
+    'emi' => number_format($emi, 2),
+    'total' => number_format($total, 2),
+    'interest' => number_format($interest, 2)
+  ];
+} -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Loan Calculator</title>
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-5">
+  <h2 class="mb-4">Loan & EMI Calculator</h2>
+  <form method="post" class="row g-3" onsubmit="calculate()">
+    <div class="col-md-4"><label>Principal (₹)</label><input id="principal" class="form-control" required></div>
+    <div class="col-md-4"><label>Annual Interest Rate (%)</label><input id="rate" class="form-control" required></div>
+    <div class="col-md-4"><label>Term (years)</label><input id="term" class="form-control" required></div>
+    <div class="col-12"><button type="submit" class="btn btn-primary">Calculate</button></div>
+  </form>
+  <!-- <?php if ($result): ?> -->
+    <div class="mt-4 p-4 bg-light rounded" id="Result">
+      <p><strong>Monthly EMI:</strong> ₹<?= $result['emi'] ?></p>
+      <p><strong>Total Payment:</strong> ₹<?= $result['total'] ?></p>
+      <p><strong>Total Interest:</strong> ₹<?= $result['interest'] ?></p>
+      <a href="contact.html" class="btn btn-success">Book Consultation</a>
+    </div>
+  <!-- <?php endif; ?> -->
+
+  <script>
+    function calculate() {
+      alert("Go Ahead!!");
+      const Principal = document.getElementById("principal").value;
+      const Rate = document.getElementById("rate").value;
+      const Term = document.getElementById("term").value;
+
+      alert("p :"+ p);
+    }
+  </script>
+</body>
+</html>
