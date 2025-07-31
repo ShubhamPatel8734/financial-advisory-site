@@ -1,59 +1,208 @@
-<!-- 
-$result = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $P = floatval($_POST['principal']);
-  $annual_rate = floatval($_POST['rate']);
-  $years = floatval($_POST['term']);
-  $n = $years * 12;
-  $r = $annual_rate / (12 * 100);
-  if ($r > 0) {
-    $emi = ($P * $r * pow(1 + $r, $n)) / (pow(1 + $r, $n) - 1);
-  } else {
-    $emi = $P / $n;
-  }
-  $total = $emi * $n;
-  $interest = $total - $P;
-  $result = [
-    'emi' => number_format($emi, 2),
-    'total' => number_format($total, 2),
-    'interest' => number_format($interest, 2)
-  ];
-} -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Loan Calculator</title>
-  <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Advisor | Calculator</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+
 </head>
-<body class="container py-5">
-  <h2 class="mb-4">Loan & EMI Calculator</h2>
-  <form method="post" class="row g-3" onsubmit="calculate()">
-    <div class="col-md-4"><label>Principal (₹)</label><input id="principal" class="form-control" required></div>
-    <div class="col-md-4"><label>Annual Interest Rate (%)</label><input id="rate" class="form-control" required></div>
-    <div class="col-md-4"><label>Term (years)</label><input id="term" class="form-control" required></div>
-    <div class="col-12"><button type="submit" class="btn btn-primary">Calculate</button></div>
-  </form>
-  <!-- <?php if ($result): ?> -->
-    <div class="mt-4 p-4 bg-light rounded" id="Result">
-      <p><strong>Monthly EMI:</strong> ₹<?= $result['emi'] ?></p>
-      <p><strong>Total Payment:</strong> ₹<?= $result['total'] ?></p>
-      <p><strong>Total Interest:</strong> ₹<?= $result['interest'] ?></p>
-      <a href="contact.html" class="btn btn-success">Book Consultation</a>
+<body class="container-fluid" onpageshow="calculateLoan(), calculateInterest()">
+    
+    <header>
+        <nav class="navbar navbar-expand-lg" style="border: 2px solid blue;">
+
+                <a class="navbar-brand" href="index.php">
+                    <img src="images/logo.png" height="50" >
+                </a>
+
+
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculator.html">Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consultation.html">Free Consultation</a></li>
+
+                </ul>
+                    
+        </nav>
+    </header>
+
+    <div>
+        <h2>Loan Payment Calculator</h2>
+        <div class="col-md-4"><label>Loan Amount ($)</label>
+            <input
+                class="form-control"
+                id="loanAmount"
+                type="number"
+                value="90000"
+                oninput="calculateLoan()"
+                placeholder="000"
+            />
+        </div>
+        <div class="col-md-4"><label>Annual Interest Rate (%)</label>
+            <input 
+                class="form-control"
+                id="interestRate"
+                type="number"
+                step="0.1"
+                value="1.0"
+                oninput="calculateLoan()"
+                placeholder="0.0"
+            />
+        </div>
+        <div class="col-md-4"><label>Loan Term (years)</label>
+            <input 
+                class="form-control" 
+                id="loanTerm"
+                type="number"
+                step="0.1"
+                value="1.0"
+                oninput="calculateLoan()"
+                placeholder="0.0"
+            />
+        </div>
     </div>
-  <!-- <?php endif; ?> -->
 
-  <script>
-    function calculate() {
-      alert("Go Ahead!!");
-      const Principal = document.getElementById("principal").value;
-      const Rate = document.getElementById("rate").value;
-      const Term = document.getElementById("term").value;
+    <div>
+        <h3 id="monthlyPayment"></h3>
+        <p>Monthly Payment</p>
+    </div>
+    <div>
+        <h3 id="totalPayment"></h3>
+        <p>Total Payment</p>
+    </div>
+    <div>
+        <h3 id="totalInterest"></h3>
+        <p>Total Interest</p>
+    </div>
 
-      alert("p :"+ p);
-    }
-  </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div>
+        <h2>Investment Growth Calculator</h2>
+        <div class="col-md-4"><label>Initial Investment ($)</label>
+            <input
+                class="form-control"
+                id="investmentAmount"
+                type="number"
+                value="50000"
+                oninput="calculateInterest()"
+                placeholder="e.g. 50000"
+            />
+        </div>
+        <div class="col-md-4"><label>Annual Interest Rate (%)</label>
+            <input 
+                class="form-control"
+                id="rate"
+                type="number"
+                step="0.1"
+                value="7.5"
+                oninput="calculateInterest()"
+                placeholder="e.g. 7.5"
+            />
+        </div>
+        <div class="col-md-4"><label>Time Period (years)</label>
+            <input 
+                class="form-control" 
+                id="timePeriod"
+                type="number"
+                step="0.1"
+                value="5.0"
+                oninput="calculateInterest()"
+                placeholder="e.g. 5.0"
+            />
+        </div>
+        <div class="col-md-4"><label>Compound Frequency</label>
+            <select class="form-control" id="frequency" onchange="calculateInterest()">
+                <option value="1">Annually</option>
+                <option value="4">Quarterly</option>
+                <option value="12">Monthly</option>
+                <option value="365">Daily</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <h3 id="futureValue"></h3>
+        <p>Future Value</p>
+    </div>
+    <div>
+        <h3 id="interestEarned"></h3>
+        <p>Total Interest Earned</p>
+    </div>
+    <div>
+        <h5><b>% Growth Rate</b></h5>
+        <h5 id="growthRate"></h5>
+    </div>
+
+    <script>
+        function calculateLoan() {
+            // alert("Go Ahead!!");
+            const principal = parseFloat(document.getElementById("loanAmount").value); 
+            const rate = parseFloat(document.getElementById("interestRate").value) / (12 * 100); 
+            const term = parseFloat(document.getElementById("loanTerm").value) * 12; 
+            const monthlyPayment = document.getElementById("monthlyPayment"); 
+            const totalPayment = document.getElementById("totalPayment"); 
+            const totalInterest = document.getElementById("totalInterest"); 
+            
+            if (!isNaN(principal) && !isNaN(rate) && !isNaN(term) && principal > 0 && rate > 0 && term > 0) {
+                // alert("Amount:"+ principal+ "/nRate:"+ rate+ "/nTerm:"+ term);
+                
+                const x = Math.pow(1 + rate, term);
+                const monthly = (principal * rate * x) / (x - 1);
+                const total = monthly * term;
+                const interest = total - principal;
+
+                monthlyPayment.textContent = "$ " + monthly.toFixed(2);
+                totalPayment.textContent = "$ " + total.toFixed(2);
+                totalInterest.textContent = "$ " + interest.toFixed(2);
+
+            } else {
+
+                monthlyPayment.textContent = "$ 0";
+                totalPayment.textContent = "$ 0";
+                totalInterest.textContent = "$ 0";
+                    
+                
+            }
+
+        }
+    </script>
+
+    <script>
+        function calculateInterest() {
+            // alert("Go Ahead!!");
+            const principal = parseFloat(document.getElementById("investmentAmount").value);
+            const rate = parseFloat(document.getElementById("rate").value) / 100;
+            const time = parseFloat(document.getElementById("timePeriod").value);
+            const frequency = parseInt(document.getElementById("frequency").value);
+
+            if (!isNaN(principal) && !isNaN(rate) && !isNaN(time) && !isNaN(frequency) && principal > 0 && rate > 0 && time > 0) {
+
+                // const r = rate / 100;
+                const compoundFactor = Math.pow(1 + rate / frequency, frequency * time);
+                const futureValue = principal * compoundFactor;
+                const interestEarned = futureValue - principal;
+                const growthRate = (Math.pow(futureValue / principal, 1 / time) - 1) * 100;
+
+                document.getElementById("futureValue").textContent = "$ " + futureValue.toFixed(2);
+                document.getElementById("interestEarned").textContent = "$ " + interestEarned.toFixed(2);
+                document.getElementById("growthRate").innerHTML = `Your investment will grow by <strong>${growthRate.toFixed(2)}%</strong> over ${time} years.`;
+            } else {
+                document.getElementById("futureValue").textContent = "$ 0";
+                document.getElementById("interestEarned").textContent = "$ 0";
+                document.getElementById("growthRate").innerHTML = `Your investment will grow by <strong>0.0%</strong> over 0 years.`;
+            }
+        }
+    </script>
+    
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
