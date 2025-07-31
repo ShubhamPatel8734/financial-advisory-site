@@ -1,0 +1,116 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 75px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item {
+  color: #555;
+}
+.nav-item:hover {
+  color: #000;
+  font-weight: bold;
+}
+.nav-item.active {
+  color: #000;
+  font-weight: bold;
+}
+
+/* .icon-inline {
+  fill: #555;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 4px;
+} */
+
+/* Buttons */
+.btn-accent {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* cursor: pointer; */
+}
+.btn-accent:hover {
+  background-color: #0056b3;
+}
+
+.consult-link {
+  text-decoration: none;
+}
+
+/* Mobile Styles */
+.mobile-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Icon */
+/* .icon {
+  height: 24px;
+  width: 24px;
+} */
+
+
+/* Footer CSS -- */
+footer {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #032d63;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 40px 5%;
+}
+
+footer strong {
+  color: #ffffff;
+}
+
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 30px;
+  padding-top: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}

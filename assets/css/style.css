@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  color: white;
+}
+
+.hero-img-section {
+  height: 720px;
+  object-fit: cover;
+  overflow: hidden;
+}
