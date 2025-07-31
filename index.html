@@ -1,47 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Financial Advisory Services</title>
-  <link href="assets/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Advisor | Home</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/header_footer.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light bg-light">
+
+<!-- <div id="header-placeholder"></div>
+<script src="header_footer_loader.js"></script> -->
+
+<header class="navbar ">
   <div class="container">
-    <a class="navbar-brand" href="#">FinAdvise</a>
-    <div>
-      <ul class="navbar-nav ms-auto">
-        <li><a class="nav-link" href="calculator.html">Calculator</a></li>
-        <li><a class="nav-link" href="contact.html">Consultation</a></li>
-      </ul>
+    <a href="index.html">
+      <img src="assets/images/logo.png" alt="logo" height="40" />
+      <!-- <a href="/" class="brand">WealthWise Advisors</a> -->
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item active">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+          <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
+        </svg>
+        Home</a>
+      <a href="calculator.html" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
+          <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+          <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+        Calculators
+      </a>
+      <!-- <button onclick="scrollToSection('services')" class="nav-item only-home">Services</button>
+      <button onclick="scrollToSection('about')" class="nav-item only-home">About</button> -->
+      <a href="consultation.html" class="consult-link">
+        <button class="btn-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-event" viewBox="0 0 16 16">
+            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+            <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+          Free Consultation
+        </button>
+      </a>
+    </nav>
+
+    <div class="mobile-only">
+      <a href="consultation.html">
+        <button class="btn-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-event" viewBox="0 0 16 16">
+            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+            <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+          Book Now
+        </button>
+      </a>
     </div>
   </div>
-</nav>
-<header class="hero bg-primary text-white text-center py-5">
-  <div class="container">
-    <h1>Smart Financial Advice at Your Fingertips</h1>
-    <p>Compute loan costs and book a free consultation—no hidden fees.</p>
-    <a href="calculator.html" class="btn btn-light me-2">Try Calculator</a>
-    <a href="contact.html" class="btn btn-outline-light">Book Consultation</a>
-  </div>
 </header>
-<section class="container py-5">
-  <h2>How It Works</h2>
-  <div class="row text-center">
-    <div class="col-md-4">1. Enter your Loan Details →</div>
-    <div class="col-md-4">2. View payment & interest info →</div>
-    <div class="col-md-4">3. Book your free advice session</div>
+
+<main>
+  <div class="hero-img-section">
+    <img src="assets/images/hero-image.png" />
   </div>
-</section>
-<section class="container py-5 bg-light">
-  <h2>Your Trusted Advisor</h2>
-  <p>With 10+ years of experience guiding clients toward smarter financial decisions.</p>
-</section>
-<footer class="text-center py-3 bg-dark text-white">
-  &copy; 2025 FinAdvise. All rights reserved.
+  <!-- <h1>Welcome to Finance Advisor</h1>
+    <p>This content fills the remaining screen space below the header.</p> -->
+</main>
+
+<footer>
+    <div class="row text-center">
+      <div class="col px-5 mx-5 text-start">
+        <h5><strong>Fin Advisor</strong></h5>
+        <p>
+          Your trusted partner in building wealth and securing your financial future.
+        </p>
+      </div>
+
+      <div class="col">
+        <h5><strong>Services</strong></h5>
+        <ul class="footer-list">
+          <li>Retirement Planning</li>
+          <li>Investment Management</li>
+          <li>Tax Planning</li>
+          <li>Estate Planning</li>
+        </ul>
+      </div>
+
+      
+    </div>
+
+    <div class="footer-bottom">
+      <small>© 2024 Fin Advisor. All rights reserved.</small>
+    </div>
+  
 </footer>
-<script src="assets/bootstrap.min.js"></script>
+
+<script>
+  // function scrollToSection(id) {
+  //   const section = document.getElementById(id);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }
+
+  // This simulates pathname logic (in static site use cases)
+  const pathname = window.location.pathname;
+  document.querySelectorAll(".nav-item").forEach(link => {
+    if (link.getAttribute("href") === pathname) {
+      link.classList.add("active");
+    }
+    if (pathname !== "/") {
+      document.querySelectorAll(".only-home").forEach(btn => btn.style.display = "none");
+    }
+  });
+</script>
+
 </body>
 </html>
