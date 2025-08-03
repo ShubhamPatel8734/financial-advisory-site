@@ -3,9 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+/* body {
   font-family: Arial, sans-serif;
-}
+} */
 a {
   text-decoration: none;
   color: inherit;
@@ -16,13 +16,143 @@ main {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding: 0px;
+  padding: 0px 0px 0px 0px;
   margin: 0px;
-  color: white;
+}
+
+p {
+  color: #64748b;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 210%;
+  color: #000000;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.btn {
+  padding: 7px 20px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.btn-dark {
+    background-color: #032d63;
+}
+
+.btn-dark:hover {
+    background-color: #032d63df;
+}
+
+.blue-text {
+  color: #007bff !important;
 }
 
 .hero-img-section {
   height: 720px;
-  object-fit: cover;
   overflow: hidden;
+}
+
+.hero-img-section img {
+  display: flex;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.hero-content h1 {
+  /* font-weight: 700; */
+  font-size: 400%;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: 135%;
+  margin-top: 7%;
+  margin-bottom: 7%;
+  color: #ffffff;
+}
+
+
+.tools-section {
+  padding: 60px 0;
+  text-align: center;
+}
+.tool-card {
+  display: inline-table;
+  margin: 15px;
+  border: 1px solid #e6e6e6;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  height: 350px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.tool-card .icon-box {
+  background-color: #f1f3f5;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.tool-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.services-section {
+  padding: 60px;
+  text-align: center;
+  background-color: #f1f5f980;
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 10px;
+  text-align: left;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.icon-box {
+  background-color: #f1f3f5;
+  font-size: 28px;
+  border-radius: 10px;
+  padding: 10px 16px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.about {
+  padding: 60px 25%;
+  text-align: center;
+}
+
+.connect {
+  padding: 60px 25%;
+  text-align: center;
+  background-color: #1a5db41c;
 }
