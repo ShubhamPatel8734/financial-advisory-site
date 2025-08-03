@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* body {
+  font-family: Arial, sans-serif;
+} */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  min-height: 100vh;
+  /* padding: 0px 0px 0px 0px; */
+  /* margin: 0px; */
+}
+
+p {
+    color: #64748b;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 200%;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 150%;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn {
+  padding: 5px 20px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.btn-dark {
+    background-color: #032d63;
+}
+
+.btn-dark:hover {
+    background-color: #032d63df;
+}
+
+.calc-hero-section {
+    padding: 5% 27%;
+    background: #1a5db41c;
+    text-align: center;
+    font-size: 20px;
+}
+
+.calc-hero-section h1 {
+    font-size: 300%;
+    font-weight: 700;
+    margin: 7%;
+    background: linear-gradient(to right, #0d448a, #287be8, #0d448a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    text-align: center;
+    padding: 5% 28%;
+}
+
+.calc .box {
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.calc .box label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.calc .box .blue-box {
+    border-radius: 10px;
+    background: #007bff1a;
+    color: #007bff;
+    text-align: center;
+    padding-top: 2%;
+    margin: 1% 1.5%;
+}
+
+.calc .box .black-box {
+    border-radius: 10px;
+    background: #032d6318;
+    color: #032d63;
+    text-align: center;
+    padding-top: 2%;
+    margin: 1% 1.5%;
+}
+
+.calc .box .gray-box {
+    border-radius: 10px;
+    background: #00000009;
+    color: #6d6d6d;
+    text-align: center;
+    padding-top: 2%;
+    margin: 1% 1.5%;
+}
+
+.calc .box .green-box {
+    border-radius: 10px;
+    background: #21c45d1d;
+    color: #21c45d;
+    text-align: center;
+    padding-top: 2%;
+    margin: 1% 1.5%;
+}
+
+.calc .box strong {
+    color: #21c45d;
+}
+
+.connect {
+    padding: 5% 28%;
+    background: #f1f5f980;
+    text-align: center;
+    font-size: 18px;
+}
