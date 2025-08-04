@@ -91,12 +91,15 @@ footer {
   max-width: 100%;
   margin: 0 auto;
   background-color: #032d63;
-  color: rgba(255, 255, 255, 0.8);
   padding: 40px 5%;
 }
 
 footer strong {
   color: #ffffff;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 
