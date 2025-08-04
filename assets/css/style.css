@@ -57,6 +57,7 @@ h3 {
 .hero-img-section {
   height: 720px;
   overflow: hidden;
+  width: 100%;
 }
 
 .hero-img-section img {
