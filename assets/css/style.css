@@ -57,12 +57,12 @@ h3 {
 .hero-img-section {
   height: 720px;
   overflow: hidden;
-  width: 100%;
 }
 
 .hero-img-section img {
   display: flex;
   object-fit: cover;
+  background: #032d63;
 }
 
 .hero-content {
@@ -120,7 +120,7 @@ h3 {
 .services-section {
   padding: 60px;
   text-align: center;
-  background-color: #f1f5f980;
+  background-color: #dcdcdc4d;
 }
 
 .service-card {
