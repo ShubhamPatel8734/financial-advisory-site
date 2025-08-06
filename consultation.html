@@ -7,6 +7,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/header_footer.css" rel="stylesheet" />
     <link href="assets/css/consulation.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -59,9 +60,9 @@
     <main>
         
         <div class="consult-hero-section">
-            <h1>Free Financial Consultation</h1>
-            <p>Take the first step towards financial freedom. Schedule a complimentary consultation with our certified financial advisors and discover personalized strategies for your goals.</p>
-            <div class="row">
+            <h1 class="animate__animated animate__flipInX">Free Financial Consultation</h1>
+            <p class="animate__animated animate__fadeIn animate__slow">Take the first step towards financial freedom. Schedule a complimentary consultation with our certified financial advisors and discover personalized strategies for your goals.</p>
+            <div class="row animate__animated animate__fadeIn animate__fast animate__delay-1s">
                 <p class="green-text col">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-check2-circle" viewBox="0 1 16 16">
                         <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"/>
@@ -85,7 +86,7 @@
             </div>
         </div>
 
-        <div class="schedule-section">
+        <div class="schedule-section scroll-animate animate__animated">
             <h1>Why Schedule a Consultation?</h1>
             <p class="mb-5">Our experienced advisors provide personalized financial guidance tailored to your unique situation and goals.</p>
                 
@@ -133,6 +134,7 @@
 
 
         <div class="booking-section">
+            <div class="scroll-animate animate__animated">
             <h1>Schedule Your Free Consultation</h1>
             <p>Fill out the form below and one of our certified financial advisors will contact you to schedule your complimentary 30-minute consultation.</p>
 
@@ -197,10 +199,11 @@
                         &nbsp;Thanks! Your request has been sent.
                     </div>
                 </div>
+                </div>
             </div>
             
         </div>
-        <div class="process-section">
+        <div class="process-section scroll-animate animate__animated">
             <h1>What to Expect During Your Consultation</h1>
 
             <div class="row mt-4">
@@ -266,6 +269,27 @@
     
     </footer>
     
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".scroll-animate");
+
+            const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add("animate__fadeInUp");
+
+                }
+            });
+            }, {
+            threshold: 0.2
+            });
+
+            sections.forEach(section => {
+            observer.observe(section);
+            });
+        });
+    </script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/validateForm.js"></script>
 
