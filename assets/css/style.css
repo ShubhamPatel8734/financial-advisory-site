@@ -57,12 +57,12 @@ h3 {
 .hero-img-section {
   height: 720px;
   overflow: hidden;
+  background: #194d88;
 }
 
 .hero-img-section img {
   display: flex;
   object-fit: cover;
-  background: #032d63;
 }
 
 .hero-content {
@@ -157,3 +157,4 @@ h3 {
   text-align: center;
   background-color: #1a5db41c;
 }
+
